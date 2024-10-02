@@ -60,6 +60,7 @@ public class EditDesignActivity extends AppCompatActivity {
                         model = dataSnapshot.getValue(DesignModel.class);
                         binding.name.getEditText().setText(model.name);
                         binding.description.getEditText().setText(model.description);
+                        binding.price.getEditText().setText(String.format("%.2f", model.price));
                         Glide.with(this).load(model.image).into(binding.image);
                     }
                 }).addOnFailureListener(e -> {
@@ -98,6 +99,7 @@ public class EditDesignActivity extends AppCompatActivity {
     private void uploadData(String link) {
         model.name = binding.name.getEditText().getText().toString();
         model.description = binding.description.getEditText().getText().toString();
+        model.price = Double.parseDouble(binding.price.getEditText().getText().toString());
         model.image = link;
         Constants.databaseReference().child(SELECTED_DEVICE).child(Constants.DESIGNS).child(MODEL_ID).child(model.id)
                 .setValue(model).addOnSuccessListener(command -> {
@@ -130,6 +132,10 @@ public class EditDesignActivity extends AppCompatActivity {
         }
         if (binding.description.getEditText().getText().toString().isEmpty()) {
             Toast.makeText(this, "Description is empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (binding.price.getEditText().getText().toString().isEmpty()){
+            Toast.makeText(this, "Price is empty", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

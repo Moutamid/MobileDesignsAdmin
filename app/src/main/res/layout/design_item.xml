@@ -44,6 +44,15 @@
                 android:textSize="17sp"
                 android:textColor="@color/black"/>
 
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="$25.00"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"/>
 
             <TextView
                 android:id="@+id/desc"
@@ -52,7 +61,8 @@
                 android:text="@string/lorem"
                 android:textSize="14sp"
                 android:layout_marginTop="5dp"
-                android:lines="5"
+                android:lines="3"
+                android:ellipsize="end"
                 android:textColor="@color/text"/>
 
             <LinearLayout

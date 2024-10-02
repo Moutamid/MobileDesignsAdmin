@@ -44,6 +44,7 @@ public class DesignAdapter extends RecyclerView.Adapter<DesignAdapter.DesignVH> 
         Glide.with(context).load(model.image).into(holder.image);
         holder.name.setText(model.name);
         holder.desc.setText(model.description);
+        holder.price.setText(String.format("$%.2f", model.price));
 
         holder.edit.setOnClickListener(v -> {
             context.startActivity(new Intent(context, EditDesignActivity.class)
@@ -82,11 +83,12 @@ public class DesignAdapter extends RecyclerView.Adapter<DesignAdapter.DesignVH> 
 
     public class DesignVH extends RecyclerView.ViewHolder {
         ImageView image;
-        TextView name, desc;
+        TextView name, desc, price;
         Button edit, delete;
         public DesignVH(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
+            price = itemView.findViewById(R.id.price);
             name = itemView.findViewById(R.id.name);
             desc = itemView.findViewById(R.id.desc);
             edit = itemView.findViewById(R.id.edit);

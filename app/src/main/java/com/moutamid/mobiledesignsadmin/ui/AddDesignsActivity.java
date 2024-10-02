@@ -118,6 +118,7 @@ public class AddDesignsActivity extends AppCompatActivity {
         model.id = UUID.randomUUID().toString();
         model.name = binding.name.getEditText().getText().toString();
         model.description = binding.description.getEditText().getText().toString();
+        model.price = Double.parseDouble(binding.price.getEditText().getText().toString());
         model.modelID = MODEL_ID;
         model.device = SELECTED_DEVICE;
         model.image = link;
@@ -143,6 +144,10 @@ public class AddDesignsActivity extends AppCompatActivity {
         }
         if (binding.description.getEditText().getText().toString().isEmpty()){
             Toast.makeText(this, "Description is empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (binding.price.getEditText().getText().toString().isEmpty()){
+            Toast.makeText(this, "Price is empty", Toast.LENGTH_SHORT).show();
             return false;
         }
         if (imageUri == Uri.EMPTY){
