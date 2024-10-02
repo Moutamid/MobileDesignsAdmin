@@ -25,6 +25,9 @@ import java.net.URL;
 
 public class Constants {
     static Dialog dialog;
+    public static final String ID = "ID";
+    public static final String MODEL_ID = "MODEL_ID";
+    public static final String DEVICE = "DEVICE";
     public static final String MODELS = "MODELS";
     public static final String DESIGNS = "DESIGNS";
     public static final String iPhone = "iPhone";

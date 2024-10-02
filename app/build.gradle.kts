@@ -41,6 +41,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.dhaval2404:imagepicker:2.1")
 
     implementation(libs.appcompat)
     implementation(libs.material)

@@ -1,6 +1,7 @@
 package com.moutamid.mobiledesignsadmin.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.moutamid.mobiledesignsadmin.Constants;
 import com.moutamid.mobiledesignsadmin.R;
 import com.moutamid.mobiledesignsadmin.models.DesignModel;
+import com.moutamid.mobiledesignsadmin.ui.AddDesignsActivity;
+import com.moutamid.mobiledesignsadmin.ui.EditDesignActivity;
 
 import java.util.ArrayList;
 
@@ -43,7 +46,10 @@ public class DesignAdapter extends RecyclerView.Adapter<DesignAdapter.DesignVH> 
         holder.desc.setText(model.description);
 
         holder.edit.setOnClickListener(v -> {
-
+            context.startActivity(new Intent(context, EditDesignActivity.class)
+                    .putExtra(Constants.DEVICE, model.device)
+                    .putExtra(Constants.ID, model.id)
+                    .putExtra(Constants.MODEL_ID, model.modelID));
         });
 
         holder.delete.setOnClickListener(v -> {

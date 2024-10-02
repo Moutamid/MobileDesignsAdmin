@@ -73,6 +73,8 @@ public class DesignActivity extends AppCompatActivity {
                     SELECTED_DEVICE = Constants.Apple_Watch;
                 }
                 binding.models.getEditText().setText("");
+                binding.dataLayout.setVisibility(View.GONE);
+                binding.noLayout.setVisibility(View.VISIBLE);
                 getData();
             }
         });
