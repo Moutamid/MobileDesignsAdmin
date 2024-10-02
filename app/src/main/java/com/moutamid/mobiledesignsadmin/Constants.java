@@ -33,6 +33,7 @@ public class Constants {
     public static final String iPhone = "iPhone";
     public static final String Samsung = "Samsung";
     public static final String Apple_Watch = "Apple_Watch";
+    public static final String ORDERS = "ORDERS";
 
     public static void initDialog(Context context) {
         dialog = new Dialog(context);
