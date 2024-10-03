@@ -42,6 +42,11 @@ public class OrdersActivity extends AppCompatActivity {
         binding.orders.setLayoutManager(new LinearLayoutManager(this));
         binding.orders.setHasFixedSize(false);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         Constants.initDialog(this);
         Constants.showDialog();
         ArrayList<OrderModel> list = new ArrayList<>();
@@ -66,6 +71,5 @@ public class OrdersActivity extends AppCompatActivity {
                 Toast.makeText(OrdersActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

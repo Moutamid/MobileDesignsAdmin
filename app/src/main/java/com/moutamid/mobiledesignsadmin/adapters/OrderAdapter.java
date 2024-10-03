@@ -2,6 +2,7 @@ package com.moutamid.mobiledesignsadmin.adapters;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import com.moutamid.mobiledesignsadmin.Constants;
 import com.moutamid.mobiledesignsadmin.R;
 import com.moutamid.mobiledesignsadmin.models.DeviceModels;
 import com.moutamid.mobiledesignsadmin.models.OrderModel;
+import com.moutamid.mobiledesignsadmin.ui.OrderDetailActivity;
 
 import java.util.ArrayList;
 
@@ -45,7 +47,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ModelVH> {
         OrderModel model = list.get(holder.getAdapterPosition());
         holder.product.setText(model.productName + " | x" + model.quantity);
         holder.itemView.setOnClickListener(v -> {
-
+            context.startActivity(new Intent(context, OrderDetailActivity.class).putExtra(Constants.ID, model.UID));
         });
     }
 

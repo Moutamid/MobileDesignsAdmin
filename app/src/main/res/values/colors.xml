@@ -8,4 +8,5 @@
     <color name="grey">#EFEDED</color>
     <color name="text">#787574</color>
     <color name="red">#E1695E</color>
+    <color name="red_light">#F5CDC9</color>
 </resources>
